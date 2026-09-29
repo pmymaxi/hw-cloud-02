@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LAMP Instance Group</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        h2 {
+            color: #444444;
+        }
+
+        p {
+            color: #666666;
+        }
+
+        .instance {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .instance strong {
+            color: #222222;
+        }
+
+        .image {
+            margin-top: 30px;
+        }
+
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            text-decoration: none;
+            background: #333333;
+            color: #ffffff;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>LAMP Instance Group</h1>
+
+    <p>
+        Yandex Cloud Instance Group
+    </p>
+
+    <div class="instance">
+
+        <h2>Instance information</h2>
+
+        <p>
+            <strong>Hostname:</strong>
+            __INSTANCE_HOSTNAME__
+        </p>
+
+        <p>
+            <strong>Private IP:</strong>
+            __INSTANCE_IP__
+        </p>
+
+    </div>
+
+    <div class="image">
+
+        <h2>Object Storage image</h2>
+
+        <p>
+            Изображение загружено из Yandex Object Storage.
+        </p>
+
+        <img
+            src="__IMAGE_URL__"
+            alt="Image from Yandex Object Storage"
+        >
+
+        <br>
+
+        <a
+            class="button"
+            href="__IMAGE_URL__"
+            target="_blank"
+        >
+            Открыть изображение
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+#cloud-config
+
+write_files:
+
+  - path: /var/www/html/index.html
+    owner: root:root
+    permissions: "0644"
+    encoding: b64
+    content: ${index_html_base64}
+
+runcmd:
+
+  - |
+      HOSTNAME_VALUE="$(hostname)"
+      IP_VALUE="$(hostname -I | awk '{print $1}')"
+
+      sed -i "s|__INSTANCE_HOSTNAME__|$HOSTNAME_VALUE|g" /var/www/html/index.html
+
+      sed -i "s|__INSTANCE_IP__|$IP_VALUE|g" /var/www/html/index.html
+
+      chown www-data:www-data /var/www/html/index.html
+
+      chmod 0644 /var/www/html/index.html
+
+      systemctl enable apache2
+
+      systemctl restart apache2
