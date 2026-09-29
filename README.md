@@ -139,25 +139,10 @@ application_load_balancer_enabled = true
 
 ## Результат
 
-В результате Terraform разворачивает веб-инфраструктуру в Yandex Cloud:
+### NLB
+<img width="2214" height="2033" alt="изображение" src="https://github.com/user-attachments/assets/62c82e2b-fe2a-49ce-a8cc-9be22a7bb03f" />
 
-```text
-                    Internet
-                        │
-                        ▼
-                 Load Balancer
-                   NLB / ALB
-                        │
-              ┌─────────┼─────────┐
-              ▼         ▼         ▼
-             VM        VM        VM
-              │         │         │
-              └─────────┼─────────┘
-                        │
-                  Instance Group
-                        │
-                        ▼
-                Object Storage
-                   (image.jpg)
-```
+### ALB
+<img width="2214" height="2026" alt="изображение" src="https://github.com/user-attachments/assets/e2dd3c13-2d42-4033-9533-2c169395b540" />
+
 
